@@ -542,10 +542,12 @@ body {
 
 /* --- Bottom Navigation --- */
 .bottom-nav {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 430px;
     height: 70px;
     background: white;
     display: flex;
@@ -553,11 +555,10 @@ body {
     justify-content: center;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
-    z-index: 10;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 9999;
     padding: 0 10px;
 }
-
 .nav-item {
     display: flex;
     flex-direction: column;
