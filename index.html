@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>سـابر | Saber</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="app-container">
+        
+        <section id="home-screen" class="screen active">
+            <div class="content-scroll">
+                <header class="top-header">
+                    <div class="logo-area">
+                        <img src="imgs/logo.svg" alt="Saber Logo" class="main-logo">
+                        <h1>سابر</h1>
+                    </div>
+                    <h2>تحقق من الأخبار</h2>
+                    <p class="sub-text">أدخل أو الصق أي خبر أو ادعاء أدناه للتحقق من صحته ومصداقيته</p>
+                </header>
+
+                <div class="input-wrapper">
+                    <textarea id="newsInput" placeholder="ألصق الخبر هنا للتحقق..."></textarea>
+                    
+                    <div class="input-tools">
+                        <div class="tools-group">
+                            <button id="pasteBtn" class="icon-btn paste-btn" title="لصق النص">
+                                <i class="fa-regular fa-paste"></i> لصق
+                            </button>
+                            <button id="micBtn" class="icon-btn mic-btn" title="تحدث للتحقق">
+                                <i class="fa-solid fa-microphone"></i> تحدث
+                            </button>
+                        </div>
+                        <div class="char-count" id="charCount">0 / 5000</div>
+                    </div>
+                </div>
+
+                <button id="verifyBtn" class="primary-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i> تحقق
+                </button>
+                <p class="footer-note">مدعوم بتقنيات متقدمة للتحقق من الأخبار باستخدام الذكاء الاصطناعي</p>
+            </div>
+        </section>
+
+        <section id="loading-screen" class="screen">
+            <div class="loading-content">
+                <div class="spinner-container">
+                    <div class="logo-placeholder small"><i class="fa-solid fa-check-double"></i></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <h3>جاري التحقق من المعلومات</h3>
+                <p>يتم التحقق من المصداقية وتحليل المصادر</p>
+                <div class="loading-dots"><span></span><span></span><span></span></div>
+                <div class="info-message">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>يقوم سـابر بمقارنة المعلومات مع عدة مصادر موثوقة لضمان الدقة</p>
+                </div>
+                <button id="cancelBtn" class="outline-btn">إلغاء التحقق</button>
+            </div>
+        </section>
+
+        <section id="result-screen" class="screen">
+            <div class="content-scroll">
+                <div class="result-header" id="resultHeader">
+                    <div class="icon-circle" id="resultIconCircle"><i id="resultIcon" class="fa-solid"></i></div>
+                    <h3 id="resultTitle">عنوان النتيجة</h3>
+                    <p id="resultDesc">وصف النتيجة</p>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <span id="scoreLabel">درجة الثقة</span>
+                        <span class="score-text" id="resultScore">0%</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="resultBar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="card content-card">
+                    <h4>المحتوى المفحوص</h4>
+                    <p id="resultContent" class="text-body">...</p>
+                </div>
+
+                <div class="card warning-card" id="warningCard" style="display: none;">
+                    <div class="warning-title">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>توصية مهمة</span>
+                    </div>
+                    <p id="recommendationText">...</p>
+                </div>
+
+                <div class="card">
+                    <h4>المصادر الرسمية</h4>
+                    <div id="resultSources" class="sources-list"></div>
+                </div>
+
+                <div class="actions">
+                    <button id="saveBtn" class="primary-btn">حفظ النتيجة</button>
+                    <button class="outline-btn new-search-btn"><i class="fa-solid fa-magnifying-glass"></i> فحص محتوى جديد</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="saved-screen" class="screen">
+            <div class="content-scroll">
+                <header class="top-header mini-header">
+                    <h2>الأخبار المحفوظة</h2>
+                    <p class="sub-text">سجل عمليات التحقق التي قمت بحفظها</p>
+                </header>
+                
+                <div id="savedList" class="saved-list-container">
+                    <div class="empty-state">
+                        <i class="fa-regular fa-bookmark"></i>
+                        <p>لا توجد أخبار محفوظة حالياً</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="bottom-nav">
+            <div class="nav-item" id="navProfile">
+                <i class="fa-regular fa-user"></i><span>الملف الشخصي</span>
+            </div>
+            <div class="nav-item" id="navSaved">
+                <i class="fa-regular fa-bookmark"></i><span>المحفوظات</span>
+            </div>
+            <div class="nav-item active" id="navHome">
+                <i class="fa-solid fa-magnifying-glass"></i><span>تحقق</span>
+            </div>
+        </nav>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
