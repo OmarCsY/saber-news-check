@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>سـابر | Saber</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +17,7 @@
         
         <section id="home-screen" class="screen active">
             <div class="content-scroll">
+                
                 <header class="top-header">
                     <div class="logo-area">
                         <img src="imgs/logo.svg" alt="Saber Logo" class="main-logo">
@@ -24,7 +28,7 @@
                 </header>
 
                 <div class="input-wrapper">
-                    <textarea id="newsInput" placeholder="ألصق الخبر هنا للتحقق..."></textarea>
+                    <textarea id="newsInput" placeholder="ضع الخبر هنا للتحقق..."></textarea>
                     
                     <div class="input-tools">
                         <div class="tools-group">
@@ -65,6 +69,7 @@
 
         <section id="result-screen" class="screen">
             <div class="content-scroll">
+                
                 <div class="result-header" id="resultHeader">
                     <div class="icon-circle" id="resultIconCircle"><i id="resultIcon" class="fa-solid"></i></div>
                     <h3 id="resultTitle">عنوان النتيجة</h3>
@@ -82,7 +87,12 @@
                 </div>
 
                 <div class="card content-card">
-                    <h4>المحتوى المفحوص</h4>
+                    <div class="card-header">
+                        <h4>المحتوى المفحوص</h4>
+                        <button id="speakBtn" class="icon-btn speak-btn" title="التحكم بالصوت">
+                            <i class="fa-solid fa-volume-high"></i> <span>قراءة</span>
+                        </button>
+                    </div>
                     <p id="resultContent" class="text-body">...</p>
                 </div>
 
